@@ -1,0 +1,121 @@
+name: Sync from Private Repo (epgtest)
+
+on:
+  workflow_dispatch:                # 手动触发
+  # schedule:                       # 按需启用（每天 3:00 / 15:00）
+  #   - cron: '0 6,15 * * *'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public repository (epg)
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          ref: main
+          fetch-depth: 1
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config core.quotepath false          # 正确显示中文
+          git config core.precomposeunicode true   # 统一文件名编码
+
+      # ========== 核心优化：浅克隆 + 跳过 LFS + 去掉 tags ==========
+      - name: Clone private repository (epgtest)
+        run: |
+          git clone -b main \
+            --single-branch \
+            --depth 1 \
+            --no-tags \
+            https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository_owner }}/epgtest.git private-repo
+
+      - name: Sync specific files
+        id: sync
+        run: |
+          # 定义同步文件列表（统一维护，避免重复）
+          files=(
+            'README.md'
+            'swepg.xml'
+            'swepg.xml.gz'
+            'twepg.xml'
+            'twepg.xml.gz'
+            'youtubelocal.m3u'
+            'youtubeworld.m3u'
+            'yu.m3u'
+            '简体电视台目录.txt'
+            '繁體電視台目錄.txt'
+          )
+
+          changed=()
+          for file in "${files[@]}"; do
+            src="private-repo/$file"
+            dst="./$file"
+            if [ -f "$src" ]; then
+              # 只有当内容不同时才拷贝
+              if ! cmp -s "$src" "$dst" 2>/dev/null; then
+                cp "$src" "$dst"
+                changed+=("$file")
+                echo "✅ Synced: $file"
+              else
+                echo "ℹ️ No changes: $file"
+              fi
+            else
+              echo "⚠️ File not found in private repo: $file"
+            fi
+          done
+
+          # 输出变化状态供后续步骤使用
+          if [ ${#changed[@]} -gt 0 ]; then
+            echo "has_changes=true" >> $GITHUB_ENV
+            # 将数组转为逗号分隔字符串
+            printf -v joined '%s,' "${changed[@]}"
+            echo "changed_files=${joined%,}" >> $GITHUB_ENV
+          else
+            echo "has_changes=false" >> $GITHUB_ENV
+          fi
+
+      - name: Clean up private repo clone
+        run: rm -rf private-repo
+
+      - name: Commit and push if changed
+        if: env.has_changes == 'true'
+        run: |
+          export TZ='Asia/Shanghai'
+          commit_time=$(date +'%Y-%m-%d %H:%M:%S %Z')
+
+          # 先拉取远程最新变更（使用 rebase 避免 merge 提交）
+          git pull --rebase --autostash origin main
+
+          # 只添加我们关心的文件（避免意外提交）
+          for file in ${{ env.changed_files }}; do
+            # 将逗号分隔转成空格，再逐个 add
+            git add "$file"
+          done
+
+          # 提交（如果没有任何修改则跳过）
+          git commit -m "chore: sync files from epgtest [北京时间: $commit_time]"
+
+          # 推送重试机制（避免并发冲突）
+          max_retries=3
+          for ((i=1; i<=max_retries; i++)); do
+            echo "Push attempt $i/$max_retries"
+            if git push origin main; then
+              echo "✅ Push succeeded"
+              exit 0
+            fi
+            echo "Push failed, waiting to retry..."
+            sleep 3
+          done
+          echo "❌ Push failed after $max_retries attempts"
+          exit 1
+
+      - name: Log result
+        run: |
+          if [ "${{ env.has_changes }}" = "true" ]; then
+            echo "✅ Files synced successfully: ${{ env.changed_files }}"
+          else
+            echo "ℹ️ All files are already up-to-date"
+          fi
