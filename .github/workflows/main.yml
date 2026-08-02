@@ -1,8 +1,8 @@
 name: Sync from Private Repo (epgtest)
 
 on:
-  workflow_dispatch:                # 手动触发
-  # schedule:                       # 按需启用（每天 3:00 / 15:00）
+  workflow_dispatch:
+  # schedule:
   #   - cron: '0 6,15 * * *'
 
 jobs:
@@ -20,10 +20,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config core.quotepath false          # 正确显示中文
-          git config core.precomposeunicode true   # 统一文件名编码
+          git config core.quotepath false
+          git config core.precomposeunicode true
 
-      # ========== 核心优化：浅克隆 + 跳过 LFS + 去掉 tags ==========
+      # 核心优化：浅克隆 + 跳过 LFS + 去掉 tags
       - name: Clone private repository (epgtest)
         run: |
           git clone -b main \
@@ -35,7 +35,6 @@ jobs:
       - name: Sync specific files
         id: sync
         run: |
-          # 定义同步文件列表（统一维护，避免重复）
           files=(
             'README.md'
             'swepg.xml'
@@ -54,7 +53,6 @@ jobs:
             src="private-repo/$file"
             dst="./$file"
             if [ -f "$src" ]; then
-              # 只有当内容不同时才拷贝
               if ! cmp -s "$src" "$dst" 2>/dev/null; then
                 cp "$src" "$dst"
                 changed+=("$file")
@@ -67,10 +65,9 @@ jobs:
             fi
           done
 
-          # 输出变化状态供后续步骤使用
           if [ ${#changed[@]} -gt 0 ]; then
             echo "has_changes=true" >> $GITHUB_ENV
-            # 将数组转为逗号分隔字符串
+            # 保存为逗号分隔字符串（后续用 tr 拆开）
             printf -v joined '%s,' "${changed[@]}"
             echo "changed_files=${joined%,}" >> $GITHUB_ENV
           else
@@ -86,19 +83,14 @@ jobs:
           export TZ='Asia/Shanghai'
           commit_time=$(date +'%Y-%m-%d %H:%M:%S %Z')
 
-          # 先拉取远程最新变更（使用 rebase 避免 merge 提交）
           git pull --rebase --autostash origin main
 
-          # 只添加我们关心的文件（避免意外提交）
-          for file in ${{ env.changed_files }}; do
-            # 将逗号分隔转成空格，再逐个 add
-            git add "$file"
-          done
+          # ====== 修复点：将逗号分隔转为空格，让 git add 正确识别多个文件 ======
+          files_to_add=$(echo "${{ env.changed_files }}" | tr ',' ' ')
+          git add $files_to_add
 
-          # 提交（如果没有任何修改则跳过）
           git commit -m "chore: sync files from epgtest [北京时间: $commit_time]"
 
-          # 推送重试机制（避免并发冲突）
           max_retries=3
           for ((i=1; i<=max_retries; i++)); do
             echo "Push attempt $i/$max_retries"
