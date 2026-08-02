@@ -33,6 +33,7 @@ jobs:
         run: |
           # 定义需要同步的文件列表（注意文件名中的中文和特殊字符）
           files=(
+           'README.md'
             'swepg.xml'
             'swepg.xml.gz'
             'twepg.xml'
