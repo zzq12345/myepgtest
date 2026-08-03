@@ -2,8 +2,8 @@ name: Sync from Private Repo (epgtest)
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '15 22,7 * * *'
+ schedule:
+    - cron: '15 22,7 * * *'
 
 jobs:
   sync:
