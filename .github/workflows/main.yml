@@ -41,6 +41,7 @@ jobs:
             'swepg.xml.gz'
             'twepg.xml'
             'twepg.xml.gz'
+            'epgziyong.xml'
             'youtubelocal.m3u'
             'youtubeworld.m3u'
             'yu.m3u'
