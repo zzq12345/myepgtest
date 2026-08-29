@@ -1,23 +1,11 @@
 {
-"epgkankanlive.xml":"http://zzqwe.giize.com:12228/epgkankanlive.xml",
-"epgasia.xml":"http://zzqwe.giize.com:12228/epgasia.xml",
-"epgjiangsu.xml":"http://zzqwe.giize.com:12228/epgjiangsu.xml",
-"epgbtime.xml":"http://zzqwe.giize.com:12228/epgbtime.xml",
-"epglaozhang.xml.gz":  "http://epg.51zmt.top:8000/e1.xml.gz",
-"epgguangdong.xml.gz":"https://raw.githubusercontent.com/litiande03/epg/refs/heads/master/pl.xml.gz",
-"epgmyvideo.xml":"http://zzqwe.giize.com:12228/epgmyvideo.xml",
-"epgmytvsuper.xml":"http://zzqwe.giize.com:12228/epgmytvsuper.xml",
-"epgastrogo.xml":"http://zzqwe.giize.com:12228/epgastrogo.xml",
-"epgcatchplay.xml":"http://zzqwe.giize.com:12228/epgcatchplay.xml",
-"epgrthk.xml":"http://zzqwe.giize.com:12228/epgrthk.xml",
-"epgtianying.xml":"http://zzqwe.giize.com:12228/epgtianying.xml",
-"epgshanghai23.xml":"http://zzqwe.giize.com:12228/epgshanghai23.xml",
-"epg4gtv2.xml": "http://zzqwe.giize.com:12228/epg4gtv2.xml",
-  "epganywhere.xml": "http://zzqwe.giize.com:12228/epganywhere.xml",
-"epgfenghuangxiu.xml":"http://zzqwe.giize.com:12228/epgfenghuangxiu.xml",
-"epgmbcae.xml":"http://zzqwe.giize.com:12228/epgmbcae.xml",
-"yu.m3u": "http://zzqwe.giize.com:12228/yu.m3u",
-"epgindonesia.xml": "https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/indonesia.xml",
-"singtel.xml": "https://github.com/dbghelp/Singtel-TV-EPG/raw/main/singtel.xml",
-"epgsooka.xml": "https://github.com/AqFad2811/epg/raw/main/sooka.xml"
+"swepg.xml":"https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/twepg.xml",
+"swepg.xml.gz":"https://github.com/zzq12345/epgtest/raw/refs/heads/main/swepg.xml.gz",
+"twepg.xml":"https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/twepg.xml",
+"twepg.xml.gz":"https://github.com/zzq12345/epgtest/raw/refs/heads/main/twepg.xml.gz",
+"youtubelocal.m3u":  "https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/youtubelocal.m3u",
+"youtubeworld.m3u":"https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/youtubeworld.m3u",
+"yu.m3u":"https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/yu.m3u",
+"epgziyong.xml":"https://raw.githubusercontent.com/zzq12345/epgtest/refs/heads/main/epgziyong.xml"
+
 }
