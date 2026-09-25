@@ -3,7 +3,7 @@ name: Sync from Private Repo (epgtest)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 18,2 * * *'
+    - cron: '35 19,3 * * *'
 
 jobs:
   sync:
