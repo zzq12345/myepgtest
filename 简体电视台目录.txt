@@ -108,7 +108,7 @@ kix亚洲
 爱尔达Ginx电竞频道
 爱尔达INULTRA
 爱尔达Travel Channel
-爱尔达《小小祈祷》Vanemuine芭蕾舞团
+爱尔达Mezzo Live
 爱尔达TRACE Urban
 爱尔达TRACE Sport Stars
 爱尔达PET CLUB TV
@@ -153,10 +153,10 @@ KBSWorld
 HOY 76
 HOY 77
 HOY 78
-爱知‧名古屋亚运跳水 - 男子3米弹板初赛及决赛 (上午11:00)
-爱知‧名古屋亚运垒球 - 循环赛 - 中国香港 对 南韩 (中午12:15)
-爱知‧名古屋亚运电竞 - 《PUBG MOBILE》决赛 (早上8:00)
-爱知‧名古屋亚运羽毛球 - 女双决赛 - 中国 对 南韩 (上午11:30)
+爱知‧名古屋亚运射箭 - 复合弓男子个人8强至金牌战 (中午12:00)
+爱知‧名古屋亚运马术 - 场地障碍赛团体赛第2轮 (早上8:30)
+爱知‧名古屋亚运高尔夫球 - 女子个人、团体第2轮 (早上5:30)
+爱知‧名古屋亚运电竞 - 《英雄联盟》4强 - 南韩 对 沙特阿拉伯 (中午12:30)
 TVBS 55 新闻台
 TVBS 56
 TVBS NEWS-互动直播
@@ -1365,11 +1365,6 @@ Global Trekker探索世界频道
 高清生活时光
 彭博资讯
 TV5Monde 法国电视台
-FOX 新闻台
-ABC澳大利亚电视台
-东风卫视
-凤凰卫视香港台
-KBS韩国国际综合高清频道
 DayStar
 灿如繁星
 良陈美锦
@@ -1381,7 +1376,7 @@ Focus 风采戏剧台
 大生意人
 倚天屠龙记 2019
 锦绣安宁
-九重紫
+九重紫《10/5即将下架》
 私藏浪漫
 去有风的地方
 有你的时光里
@@ -1401,6 +1396,7 @@ WTO姐妹会
 天才冲冲冲
 木曜4超玩 一日系列
 月曜1起玩
+哈哈台《10/5移频至CH35》
 麦卡贝网路电视
 回到20岁
 好搭档
@@ -1691,6 +1687,7 @@ AURA
 TV ALHIJRAH
 Zee Cinema
 Aniplus
+Pokemon
 TVS
 TV OKEY
 VAANAVIL
@@ -1721,6 +1718,8 @@ PHOENIX
 PHOENIX NEWS
 HUA HEE DAI
 CCTV4
+Mango TV
+U Panda TV
 KBSW
 Astro Daebak
 KPLUS
