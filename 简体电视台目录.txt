@@ -88,10 +88,9 @@ kix菲律宾
 kix新加坡
 kix亚洲
 爱尔达体育 1 台
-爱尔达体育 2 台
+爱尔达体育 3 台
 爱尔达BWF世界羽球巡回赛 全台独家锁定爱尔达
 爱尔达U15棒球世界杯 中华队场次锁定爱尔达
-爱尔达体育MAX1台
 爱尔达体育MAX2台
 爱尔达体育MAX3台
 爱尔达体育MAX4台
@@ -153,10 +152,6 @@ KBSWorld
 HOY 76
 HOY 77
 HOY 78
-爱知‧名古屋亚运电竞 - 《英雄联盟》决赛 - 中华台北 对 南韩 (上午11:00)
-爱知‧名古屋亚运射箭 - 反曲弓男女团体、混合团体赛事 (上午10:00)
-爱知‧名古屋亚运高尔夫球 - 男子个人、团体第3轮 (早上5:30)
-爱知‧名古屋亚运高尔夫球 - 女子个人、团体第3轮 (早上8:19)
 TVBS 55 新闻台
 TVBS 56
 TVBS NEWS-互动直播
@@ -366,13 +361,13 @@ TVB翡翠综合台(TVBJ1)
 TVB明珠剧集台(TVB Pearl Drama)
 极限电影
 SUPER FREE (免费)
-SUPER奖门人 (免费)
+SUPER奖门人 (免费)(10月12日6时起改为SUPER Game Show (免费))
 爱．回家SUPER煲 (免费)
 SUPER识食 (免费)
-SUPER FUN (免费)
+SUPER FUN (免费)(10月12日6时起改为SUPER资讯娱乐 (免费))
 SUPER Music (免费)
-SUPER惊 (免费)
-SUPER煲剧 (免费)
+SUPER惊 (免费)(10月12日6时起改为SUPER灵异 (免费))
+SUPER煲剧 (免费)((10月12日6时起改为SUPER处境剧 (免费))
 SUPER亚视剧 (免费)
 真情SUPER煲 (免费)
 SUPER Sports (免费)
@@ -1161,10 +1156,10 @@ BBCEarth
 BBCLifestyle
 BBCNEWS
 BloombergTV
-CARTOONITO(免费)
 CATCHPLAY电影台
 CinemaWorld频道
 CNEX纪实频道
+CNEX纪实频道(免费)
 CNN国际新闻台
 CNN头条新闻台(HLN)
 CN卡通频道
@@ -1173,7 +1168,6 @@ DiscoveryDMAX
 DiscoveryEVE
 Discovery科学台(Science)
 DreamWorks
-DreamWorks(免费)
 EUROSPORT
 GinxTV电竞频道
 GlobalTrekker
@@ -1190,10 +1184,10 @@ Hami体育1台
 Hami体育1台(免费)
 Hami体育2台
 History
+INULTRA(免费)
 LiveABC互动英语频道
 LOVENATURE
 MezzoLive
-MezzoLive(免费)
 momo综合台
 momo亲子台
 NickJr.
@@ -1212,6 +1206,7 @@ WarnerTV
 中视主频
 中视经典台
 亚洲旅游台
+亚洲旅游台(免费)
 八大精彩台
 八大综艺台
 公视戏剧
@@ -1226,11 +1221,11 @@ WarnerTV
 尼克儿童频道
 影迷数位纪实台
 影迷数位电影台
+爱尔达体育MAX1台
 东森财经台
 民视影剧台
 民视综艺台
 罪案侦缉频道
-罪案侦缉频道(免费)
 华视主频
 猪哥亮歌厅秀
 达文西频道
@@ -1238,6 +1233,7 @@ WarnerTV
 金光布袋戏
 电影原声台CMusic
 靖天中文台
+靖天中文台(免费)
 靖天日本台
 靖天育乐台
 靖洋戏剧台
